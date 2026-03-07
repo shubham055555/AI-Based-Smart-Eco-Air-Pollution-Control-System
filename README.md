@@ -1,6 +1,9 @@
 # AI-Based-Smart-Eco-Air-Pollution-Control-System
 TEAM -- DEEP THINK
-SHUBHAM
+SHUBHAM 
+
 SURYANSH
+
 BRIJESH 
+
 KARTIK 
