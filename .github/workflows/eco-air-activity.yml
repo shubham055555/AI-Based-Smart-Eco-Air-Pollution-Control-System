@@ -1,0 +1,39 @@
+name: 2 Months Green Graph
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Generate commits for 60 days
+        run: |
+          git config --global user.name "Shubham"
+          git config --global user.email "shubhamsharmaa5aug@gmail.com"
+
+          START_DATE=$(date -d "60 days ago" +%Y-%m-%d)
+
+          for day in {0..59}
+          do
+            DATE=$(date -d "$START_DATE +$day days" +"%Y-%m-%d")
+
+            # Random commits per day (5–12)
+            COUNT=$((RANDOM % 8 + 5))
+
+            for i in $(seq 1 $COUNT)
+            do
+              echo "Commit $i on $DATE" >> graph.txt
+              git add .
+              GIT_AUTHOR_DATE="$DATE 10:$i:00" GIT_COMMITTER_DATE="$DATE 10:$i:00" git commit -m "Commit $i on $DATE"
+            done
+          done
+
+          git push
