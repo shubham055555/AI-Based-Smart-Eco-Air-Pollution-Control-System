@@ -74,3 +74,66 @@ These materials:
 ---
 
 ## ⚙️ System Architecture
+Sensors → Arduino (Processing) → AI Logic → Decision → Purification System → Clean Air
+
+---
+
+## 🛠️ Technology Stack
+
+- **Hardware:** Arduino UNO  
+- **Sensors:** PM2.5, MQ135, DHT11  
+- **Display:** I2C LCD  
+- **Actuator:** DC Motor  
+- **Software:** Embedded C  
+- **AI Logic:** Decision-based system  
+- **Filtration:** Bamboo & Charcoal  
+
+---
+
+## 🌟 Key Features
+
+- ✅ Real-time air quality monitoring  
+- ✅ AI-based decision making  
+- ✅ Automatic purification system  
+- ✅ Eco-friendly filtration  
+- ✅ Low-cost and scalable  
+- ✅ Suitable for indoor & outdoor use  
+
+---
+
+## 📊 Applications
+
+- Industrial areas  
+- Workshops  
+- Classrooms  
+- Urban pollution zones  
+- Indoor air quality control  
+
+---
+
+## 🔮 Future Scope
+
+- Mobile App Integration 📱  
+- Cloud-based monitoring ☁️  
+- Advanced Machine Learning models 🤖  
+- Smart city integration 🌆  
+
+---
+
+## 📄 Documentation
+
+- Research Paper  
+- Project Report  
+- PPT Presentation  
+
+---
+
+## 🏁 Conclusion
+
+This project presents a **smart, sustainable, and cost-effective solution** for air pollution control. By combining IoT, AI, and eco-friendly materials, it offers a scalable approach to improving air quality at the source level.
+
+---
+
+## ⭐ Repository
+
+🔗 https://github.com/shubham055555/AI-Based-Smart-Eco-Air-Pollution-Control-System
