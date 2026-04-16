@@ -1,0 +1,39 @@
+name: Last Month Activity Boost
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Generate commits (30 days)
+        run: |
+          git config --global user.name "Shubham"
+          git config --global user.email "shubhamsharmaa5aug@gmail.com"
+
+          START_DATE=$(date -d "30 days ago" +%Y-%m-%d)
+
+          for day in {0..29}
+          do
+            DATE=$(date -d "$START_DATE +$day days" +"%Y-%m-%d")
+
+            # 15–25 commits per day
+            COUNT=$((RANDOM % 11 + 15))
+
+            for i in $(seq 1 $COUNT)
+            do
+              echo "Commit $i on $DATE" >> activity.txt
+              git add .
+              GIT_AUTHOR_DATE="$DATE 11:$i:00" GIT_COMMITTER_DATE="$DATE 11:$i:00" git commit -m "Activity commit $i on $DATE"
+            done
+          done
+
+          git push
