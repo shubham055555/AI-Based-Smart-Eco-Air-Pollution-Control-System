@@ -1,0 +1,39 @@
+name: Extra Activity Boost
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Generate 1000 commits (last 30 days)
+        run: |
+          git config --global user.name "Shubham"
+          git config --global user.email "shubhamsharmaa5aug@gmail.com"
+
+          START_DATE=$(date -d "30 days ago" +%Y-%m-%d)
+
+          for day in {0..29}
+          do
+            DATE=$(date -d "$START_DATE +$day days" +"%Y-%m-%d")
+
+            # 25–40 commits per day
+            COUNT=$((RANDOM % 16 + 25))
+
+            for i in $(seq 1 $COUNT)
+            do
+              echo "Extra commit $i on $DATE" >> boost.txt
+              git add .
+              GIT_AUTHOR_DATE="$DATE 10:$i:00" GIT_COMMITTER_DATE="$DATE 10:$i:00" git commit -m "Boost commit $i on $DATE"
+            done
+          done
+
+          git push
