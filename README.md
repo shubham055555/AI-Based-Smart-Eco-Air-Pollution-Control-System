@@ -1,12 +1,5 @@
 # 🌍 AI-Based Smart Eco Air Pollution Control System
 
-## 👨‍💻 Team: DEEP THINK
-- Shubham  (Team Leader)
-- Suryansh  
-- Brijesh  
-- Kartik  
-
----
 
 ## 📌 Problem Description
 
